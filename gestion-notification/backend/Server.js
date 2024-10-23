@@ -16,8 +16,8 @@ app.use(cors()); // Enable CORS for all origins
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',     // Replace with your MySQL username
-  password: 'root', // Replace with your MySQL password
-  database: 'gestion'
+  password: '', // Replace with your MySQL password
+  database: 'userdb'
 });
 
 // Connect to MySQL

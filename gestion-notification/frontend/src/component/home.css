@@ -1,0 +1,76 @@
+/* Style de base pour la page */
+.home {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style de la navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .navbar-item {
+    position: relative;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .navbar-profile {
+    margin-left: auto;
+  }
+  
+  .profile-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .profile-btn:hover {
+    background-color: #777;
+  }
+  
+  /* Dropdown style */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .dropdown button:hover {
+    background-color: #666;
+  }
+  
+  /* Style de l'espace étudiant */
+  .student-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f1f1f1;
+  }
+  
+  .student-space h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
