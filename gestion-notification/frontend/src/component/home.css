@@ -73,4 +73,55 @@
     font-size: 3rem;
     color: #333;
   }
-  
+  /* Style général de la barre de navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+/* Élément de navigation Accueil */
+.navbar-item {
+  position: relative;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Bouton Profil */
+.navbar-profile .profile-btn {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Ajout pour le bouton de déconnexion */
+.navbar-logout {
+  margin-left: auto;
+}
+
+.logout-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background-color: #c9302c;
+}
