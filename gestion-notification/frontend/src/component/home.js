@@ -1,75 +1,46 @@
-import React, { useState } from "react";
+
 import "./home.css";
-import { useNavigate } from "react-router-dom"; // Utiliser useNavigate au lieu de useHistory
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate(); // Utiliser useNavigate
 
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
+  // Fonction pour rediriger vers la page de login
+  const handleLogin = () => {
+    navigate("/Login");
   };
 
-  const handleMouseLeave = () => {
-    setShowDropdown(false);
-  };
-
-  const handleLogout = () => {
-    // Appel à une API pour gérer la déconnexion
-    fetch('http://localhost:3000/logout', {
-      method: 'POST',
-      credentials: 'include' // Assure l'envoi des cookies pour la session (si sessions sont utilisées)
-    })
-      .then((response) => {
-        if (response.ok) {
-          // Suppression des informations utilisateur locales (si elles sont stockées)
-          // Redirection vers la page de login ou d'accueil
-          navigate('/login'); // Utiliser navigate pour la redirection
-        } else {
-          console.error('Failed to logout');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during logout:', error);
-      });
+  // Fonction pour rediriger vers la page d'enregistrement
+  const handleRegister = () => {
+    navigate("/Register");
   };
 
   return (
     <div className="home">
       <nav className="navbar">
-        <div
-          className="navbar-item"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          Accueil
-          {showDropdown && (
-            <div className="dropdown">
-              <button>Choix 1</button>
-              <button>Choix 2</button>
-              <button>Choix 3</button>
-              <button>Choix 4</button>
-            </div>
-          )}
+        {/* Ajout du logo ISET KEBILI */}
+        <div className="navbar-logo">
+          <span>ISET KEBILI</span>
         </div>
 
-        <div className="navbar-profile">
-          <button className="profile-btn">Profil</button>
-        </div>
-
-        <div className="navbar-logout">
-          {/* Ajout de la fonction de déconnexion */}
-          <button className="logout-btn" onClick={handleLogout}>
-            Déconnexion
+        <div className="navbar-login-register">
+          {/* Bouton pour rediriger vers la page de login */}
+          <button className="login-btn" onClick={handleLogin}>
+            Login
+          </button>
+          {/* Bouton pour rediriger vers la page de register */}
+          <button className="register-btn" onClick={handleRegister}>
+            Register
           </button>
         </div>
       </nav>
 
       <div className="student-space">
-        <h1>Espace Étudiant</h1>
+        <h1>BIENVENUE CHEZ ISET KEBILI</h1>
       </div>
     </div>
   );
 }
 
 export default Home;
+

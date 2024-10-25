@@ -1,0 +1,64 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0073e6;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+  }
+  
+  .profile-icon {
+    position: relative;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Dropdown visibility */
+  .profile-form-container {
+    position: absolute; /* Keep it absolute for dropdown effect */
+    top: 35%; /* Adjust this based on your navbar height */
+    right: 50%; /* Center horizontally */
+    transform: translateX(50%); /* Shift it to the right half of its width */
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px; /* Width of the form */
+    z-index: 10;
+
+    /* Optional: Centering content inside the form */
+    display: flex; /* Use flexbox to center children */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.profile-form-container::before {
+    content: '';
+    position: absolute;
+    top: -8px; /* Position of the arrow */
+    left: 50%; /* Center the arrow */
+    transform: translateX(-50%); /* Shift it to the center */
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent white transparent; /* Arrow color */
+}

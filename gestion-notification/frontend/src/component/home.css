@@ -1,127 +1,165 @@
-/* Style de base pour la page */
+/* Styles de base pour la page d'accueil */
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
 .home {
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style de la navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #333;
-    padding: 10px;
-  }
-  
-  .navbar-item {
-    position: relative;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .navbar-profile {
-    margin-left: auto;
-  }
-  
-  .profile-btn {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .profile-btn:hover {
-    background-color: #777;
-  }
-  
-  /* Dropdown style */
-  .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    z-index: 1;
-  }
-  
-  .dropdown button {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px;
-    text-align: left;
-    width: 100%;
-    cursor: pointer;
-  }
-  
-  .dropdown button:hover {
-    background-color: #666;
-  }
-  
-  /* Style de l'espace étudiant */
-  .student-space {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    background-color: #f1f1f1;
-  }
-  
-  .student-space h1 {
-    font-size: 3rem;
-    color: #333;
-  }
-  /* Style général de la barre de navigation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5; /* Couleur de fond douce */
+}
+
+/* Styles pour la barre de navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-}
-
-/* Élément de navigation Accueil */
-.navbar-item {
-  position: relative;
-}
-
-/* Dropdown */
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
   background-color: white;
-  color: black;
-  padding: 10px;
-  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Bouton Profil */
-.navbar-profile .profile-btn {
-  background-color: #444;
+/* Styles pour le logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styles pour les boutons de connexion et d'inscription */
+.navbar-login-register {
+  display: flex;
+  gap: 1rem; /* Espace entre les boutons */
+}
+
+/* Styles pour les boutons */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Styles pour le bouton de connexion */
+.login-btn {
+  background-color: #007bff; /* Couleur de fond bleu */
+  color: white;
+}
+
+/* Changement de couleur au survol du bouton de connexion */
+.login-btn:hover {
+  background-color: #0056b3; /* Couleur de fond bleu plus foncé au survol */
+}
+
+/* Styles pour le bouton d'inscription */
+.register-btn {
+  background-color: #28a745; /* Couleur de fond vert */
+  color: white;
+}
+
+/* Changement de couleur au survol du bouton d'inscription */
+.register-btn:hover {
+  background-color: #218838; /* Couleur de fond vert plus foncé au survol */
+}
+
+/* Styles pour l'espace étudiant */
+.student-space {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.student-space h1 {
+  color: #333;
+  font-size: 2rem;
+}
+/* home.css */
+
+/* Style de la page principale */
+.home {
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Style de la navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: #fff;
+  color: #fff;
+}
+
+.navbar-logo {
+  font-size: 1.5em;
+}
+
+.navbar-login-register button {
+  margin-left: 0.5em;
+  padding: 0.5em 1em;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px;
   cursor: pointer;
 }
 
-/* Ajout pour le bouton de déconnexion */
-.navbar-logout {
-  margin-left: auto;
+.student-space {
+  text-align: center;
+  margin-top: 2em;
 }
 
-.logout-btn {
-  background-color: #d9534f;
+/* Style pour l'arrière-plan transparent de la modale */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Style pour la modale de connexion */
+.login-modal {
+  background-color: white;
+  padding: 2em;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1001;
+  text-align: center;
+}
+
+.login-modal input {
+  display: block;
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
+.login-modal button {
+  margin-top: 1em;
+  padding: 0.5em 2em;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-.logout-btn:hover {
-  background-color: #c9302c;
+.close-btn {
+  background-color: #f44336;
+  margin-top: 0.5em;
 }

@@ -1,29 +1,25 @@
+// Login.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import './Login.css'; // Optionally include this for styling
+import { useNavigate } from 'react-router-dom';
+import './Login.css'; // Import the CSS file
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Simple validation
     if (!email || !password) {
       setError('Email and password are required');
       return;
     }
 
-    // Send login data to the backend
-    fetch('http://localhost:3000/login', { // Adjust this URL based on your backend setup
+    fetch('http://localhost:3000/login', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     })
       .then((response) => response.json())
@@ -31,9 +27,8 @@ const Login = () => {
         if (data.error) {
           setError(data.error);
         } else {
-          // Reset errors and redirect to home page after successful login
           setError('');
-          navigate('/home'); // Adjust this path based on your routing
+          navigate('/EspaceEtudiant'); // Navigate to Espace Étudiant after login
         }
       })
       .catch((err) => {
@@ -46,37 +41,31 @@ const Login = () => {
     <div className="login-container">
       <form className="login-form" onSubmit={handleLogin}>
         <h2>Login</h2>
-        
         {error && <p className="error-message">{error}</p>}
-
         <div className="form-group">
           <label>Email:</label>
-          <input 
-            type="email" 
+          <input
+            type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Enter your email"
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-
         <div className="form-group">
           <label>Password:</label>
-          <input 
-            type="password" 
+          <input
+            type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} 
-            placeholder="Enter your password"
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-
         <button type="submit">Login</button>
-
-        {/* Link to register page */}
-        <p className="register-link">
-          Don't have an account? <a href="/register">Sign up here</a>
-        </p>
+        <div className="register-link">
+          <p>
+            Don’t have an account? <a href="/register">Sign up</a>
+          </p>
+        </div>
       </form>
     </div>
   );
