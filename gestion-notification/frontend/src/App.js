@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './component/home'; // Importer la page Home
 import Login from './component/Login'; // Importer la page Login
 import Register from './component/Register'; // Importer la page Register
-import EspaceEtudiant from './component/EspaceEtudiant'; // Importer la page Espace Etudiant
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         {/* Route pour l'Espace Étudiant */}
-        <Route path="/EspaceEtudiant" element={<EspaceEtudiant />} />
       </Routes>
     </Router>
   );
