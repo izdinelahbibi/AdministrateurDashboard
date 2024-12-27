@@ -17,7 +17,7 @@ const Login = () => {
 
     setLoading(true);
     try {
-      // Mise à jour de l'URL pour correspondre à la route backend
+      // Mise à jour de l'URL pour correspondre à la route backendddd
       const response = await axios.post('http://localhost:3001/admin/login', { email, password });
 
       if (response.data.token) { // Vérification si un token est retourné
