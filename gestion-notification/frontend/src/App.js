@@ -1,23 +1,26 @@
-// App.js
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './component/home'; // Importer la page Home
-import Login from './component/Login'; // Importer la page Login
-import Register from './component/Register'; // Importer la page Register
+import Login from './component/auth admin/Login'; 
+import Register from './component/auth admin/Register'; 
+import AdminDashboard from './component/AdminDashboard'; 
+import FileUpload from './component/FileUpload'; 
+import ProfilSetting from './component/ProfilSetting'; // Make sure this import path is correct
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        {/* Route principale pour afficher Home par défaut */}
-        <Route path="/" element={<Home />} />
-        {/* Routes pour l'authentification */}
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-        {/* Route pour l'Espace Étudiant */}
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <div> {/* Wrapper div for the Router */}
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/AdminDashboard" element={<AdminDashboard />} />
+                    <Route path="/FileUpload" element={<FileUpload />} />
+                    <Route path="/profil/:id" element={<ProfilSetting />} />  {/* Route for Profile Editing */}
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

@@ -1,0 +1,155 @@
+/* General Layout */
+.dashboard {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 300px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 60px; /* Aligns below the navbar */
+    left: 0;
+    height: calc(100vh - 60px); /* Full height minus navbar */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sidebar li:hover {
+    color: #3498db;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    padding: 80px 20px; /* Padding to account for navbar height */
+    margin-left: 250px; /* Shifts content to align with sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.open {
+    margin-left: 0;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* User Management Section */
+.user-management {
+    margin-top: 20px;
+}
+
+.user-management h2 {
+    margin-bottom: 10px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+/* Button Styling */
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Input Field Styling */
+input {
+    margin: 10px 5px;
+    padding: 5px;
+}
+
+/* Center the content vertically and horizontally */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+}
+
+.user-management {
+    width: 100%;
+    max-width: 800px; /* Optional: limit the width of the user management section */
+    margin-top: 20px;
+}
